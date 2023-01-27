@@ -12,9 +12,13 @@
     <?php
     require_once 'Person.php';
     $person = new Person("Denilson", 22, "Masculino");
-    echo "<p> O(a) " . $person->getName() . " tem " . $person->getAge() . " anos e é do sexo " . $person->getSexuality() . ".</p>";
-    $person->doBirthday();
-    echo "<p> O(a) " . $person->getName() . " tem " . $person->getAge() . " anos e é do sexo " . $person->getSexuality() . ".</p>"
+    $person->details();
+
+    echo "<br>";
+
+    require_once 'Book.php';
+    $book = new Book("Harry Potter and the Philosopher's Stone", "j. k. Rolling", 3, $person->getName());
+    $book->details();
     ?>
 </body>
 
