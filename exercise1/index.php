@@ -11,13 +11,18 @@
 <body>
     <?php
     require_once 'Person.php';
-    $person = new Person("Denilson", 22, "Masculino");
+    $person = new Person("Denilson Santuchi", 22, "Masculino");
     $person->details();
 
-    echo "<br>";
+    echo "<br></br>";
 
     require_once 'Book.php';
-    $book = new Book("Harry Potter and the Philosopher's Stone", "j. k. Rolling", 3, $person->getName());
+    $book = new Book("Harry Potter and the Philosopher's Stone", "j. k. Rolling", 223, $person->getName());
+    $book->open();
+    $book->leafThrough();
+    $book->nextPage();
+    $book->backPage();
+    $book->close();
     $book->details();
     ?>
 </body>

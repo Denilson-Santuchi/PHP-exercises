@@ -1,5 +1,7 @@
 <?php
-class Book
+require_once 'IPublication.php';
+
+class Book implements IPublication
 {
     // atributes
     private string $title;
@@ -18,7 +20,7 @@ class Book
             ", total pages: " . $this->getAllPages() .
             ", actual page: " . $this->getCurrPage() .
             ", it's open: " . $verify .
-            ", reader: " . $this->getReader();
+            ", reader: " . $this->getReader() . ".";
         echo $phrase;
     }
 
@@ -26,10 +28,47 @@ class Book
     {
         if ($this->getCurrPage() + 1 <= $this->getAllPages()) {
             $this->currPage += 1;
-            echo "Page changed </br>";
+            echo "Page changed. </br>";
         } else {
-            echo "You finshed this book </br>";
+            echo "You finshed this book. </br>";
         }
+    }
+
+    public function backPage(): void
+    {
+        if ($this->getCurrPage() - 1 >= 0) {
+            $this->currPage -= 1;
+            echo "Page changed. </br>";
+        } else {
+            echo "You are at the beginning of this book. </br>";
+        }
+    }
+
+    public function open(): void
+    {
+        if ($this->getOpen()) {
+            echo "Book is open. </br>";
+        } else {
+            $this->setOpen(true);
+            echo "Book is open. </br>";
+        }
+    }
+
+    public function close(): void
+    {
+        if ($this->getOpen()) {
+            $this->setOpen(false);
+            echo "Book is close. </br>";
+        } else {
+            echo "Book is close. </br>";
+        }
+    }
+
+    public function leafThrough(): void
+    {
+        $randomNumber = rand(1, $this->getAllPages());
+        $this->setCurrPage($randomNumber);
+        echo "The current page is " . $randomNumber . ".</br>";
     }
 
     // special method
