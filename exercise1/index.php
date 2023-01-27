@@ -10,7 +10,9 @@
 
 <body>
     <?php
-    echo 'Hello Word!'
+    require_once 'Person.php';
+    $person = new Person("Denilson", 22, "Masculino");
+    echo "<p> O(a) " . $person->getName() . " tem " . $person->getAge() . " anos e é do sexo " . $person->getSexuality() . "</p>"
     ?>
 </body>
 
