@@ -12,8 +12,13 @@ class Person
         $this->age += 1;
     }
 
+    public function details(): void
+    {
+        echo "O(a) " . $this->getName() . " tem " . $this->getAge() . " anos e é do sexo " . $this->getSexuality() . ".";
+    }
+
     // special method 
-    public function __construct($na, $ag, $se)
+    public function __construct(string $na, int $ag, string $se)
     {
         $this->name = $na;
         $this->age = $ag;
@@ -27,7 +32,7 @@ class Person
         return $this->name;
     }
 
-    public function setName(string $na)
+    public function setName(string $na): void
     {
         $this->name = $na;
     }
