@@ -9,67 +9,67 @@ class Video implements IVideo
     private int $likes;
     private bool $isPlaying;
 
-    public function play()
+    public function play(): void
     {
         $this->setIsPlaying(true);
     }
 
-    public function pause()
+    public function pause(): void
     {
         $this->setIsPlaying(false);
     }
 
-    public function like()
+    public function like(): void
     {
         $this->setLikes();
     }
 
-    public function getTitle()
+    public function getTitle(): string
     {
-        $this->title;
+        return $this->title;
     }
 
-    public function setTitle($t)
+    public function setTitle($t): void
     {
         $this->title = $t;
     }
 
-    public function getRate()
+    public function getRate(): float
     {
-        $this->rate;
+        return $this->rate;
     }
 
-    public function setRate($r)
+    public function setRate($r): void
     {
         $this->rate = $r;
     }
 
-    public function getViews()
+    public function getViews(): int
     {
-        $this->views;
+        return $this->views;
     }
 
-    public function setViews($v)
+    public function setViews($v): void
     {
         $this->views = $v;
     }
 
-    public function getLikes()
+    public function getLikes(): int
     {
-        $this->likes;
+        return $this->likes;
     }
 
-    public function setLikes()
+    public function setLikes(): void
     {
         $this->likes++;
     }
 
-    public function getIsPlaying()
+    public function getIsPlaying(): bool
     {
-        $this->isPlaying;
+        return $this->isPlaying;
     }
 
-    public function setIsPlaying($i)
+    public function setIsPlaying($i): void
     {
         $this->isPlaying = $i;
     }
