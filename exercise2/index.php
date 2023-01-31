@@ -18,6 +18,12 @@
     $v[2] = new Video("Video 3");
 
     print_r($v);
+
+    require_once 'Viewer.php';
+
+    $v = new Viewer("test", 25, "male", "test.Gameplays");
+
+    print_r($v);
     ?>
     </pre>
 </body>

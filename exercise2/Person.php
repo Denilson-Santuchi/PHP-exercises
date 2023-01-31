@@ -6,6 +6,14 @@ abstract class Person
     protected string $sexuality;
     protected int $experience;
 
+    public function __construct($n, $a, $s)
+    {
+        $this->name = $n;
+        $this->age = $a;
+        $this->sexuality = $s;
+        $this->experience = 0;
+    }
+
     protected function addExp(): void
     {
         $this->experience++;
