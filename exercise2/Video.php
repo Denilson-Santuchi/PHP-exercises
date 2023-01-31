@@ -9,6 +9,15 @@ class Video implements IVideo
     private int $likes;
     private bool $isPlaying;
 
+    public function __construct($ti)
+    {
+        $this->title = $ti;
+        $this->rate = 1;
+        $this->views = 0;
+        $this->likes = 0;
+        $this->isPlaying = false;
+    }
+
     public function play(): void
     {
         $this->setIsPlaying(true);

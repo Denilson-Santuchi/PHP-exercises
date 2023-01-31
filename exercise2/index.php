@@ -9,7 +9,17 @@
 </head>
 
 <body>
-    <?php echo "Hello Word!" ?>
+    <pre>
+    <?php
+    require_once 'Video.php';
+
+    $v[0] = new Video("Video 1");
+    $v[1] = new Video("Video 2");
+    $v[2] = new Video("Video 3");
+
+    print_r($v);
+    ?>
+    </pre>
 </body>
 
 </html>
