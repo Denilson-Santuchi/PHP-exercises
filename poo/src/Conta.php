@@ -15,7 +15,12 @@ class Conta
         $this->nomeDoTitular = $nome;
         $this->saldo = 0;
 
-        Conta::$numeroDeContas++;
+        self::$numeroDeContas++;
+    }
+
+    public function __destruct()
+    {
+        self::$numeroDeContas--;
     }
 
     public function saca(float $valorASacar): void
