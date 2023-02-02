@@ -15,7 +15,6 @@ class Pessoa
         $this->cpf = $cpf;
     }
 
-
     public function recuperaNome(): string
     {
         return $this->nome;
