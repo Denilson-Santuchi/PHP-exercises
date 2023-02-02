@@ -15,4 +15,14 @@ class Conta
 
         $this->saldo -= $valorASacar;
     }
+
+    public function depositar(float $valorADepositar): void
+    {
+        if ($valorADepositar <= 0) {
+            echo 'operação inválida!';
+            return;
+        }
+
+        $this->saldo += $valorADepositar;
+    }
 }
