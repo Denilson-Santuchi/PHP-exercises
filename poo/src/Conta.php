@@ -2,9 +2,9 @@
 
 class Conta
 {
-    public string $cpfDoTitular;
-    public string $nomeDoTitular;
-    public float $saldo;
+    private string $cpfDoTitular;
+    private string $nomeDoTitular;
+    private float $saldo = 0;
 
     public function sacar(float $valorASacar): void
     {
@@ -25,4 +25,17 @@ class Conta
 
         $this->saldo += $valorADepositar;
     }
+
+    public function transferir(float $valorATransferir, Conta $contaDestino): void
+    {
+        if ($valorATransferir > $this->saldo) {
+            echo 'saldo indisponivel';
+            return;
+        }
+
+        $this->sacar($valorATransferir);
+        $contaDestino->depositar($valorATransferir);
+    }
+
+    
 }
