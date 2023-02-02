@@ -13,7 +13,18 @@ class Pessoa
         $this->cpf = $cpf;
     }
 
-    private function validaNome(string $nome): void
+
+    public function recuperaNome(): string
+    {
+        return $this->nome;
+    }
+
+    public function recuperaCpf(): string
+    {
+        return $this->cpf->recuperaCpf();
+    }
+
+    protected function validaNome(string $nome): void
     {
         if (strlen($nome) < 5) {
             echo 'nome precisa de ter 5 caracters no mínimo.' . PHP_EOL;

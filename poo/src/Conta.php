@@ -62,11 +62,11 @@ class Conta
 
     public function recuperaNome(): string
     {
-        return $this->titular->recuperaNomeDoTitular();
+        return $this->titular->recuperaNome();
     }
 
     public function recuperaCpf(): string
     {
-        return $this->titular->recuperaCpfDoTitular();
+        return $this->titular->recuperaCpf();
     }
 }
