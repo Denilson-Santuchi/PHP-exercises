@@ -5,6 +5,7 @@ class Conta
     private string $cpfDoTitular;
     private string $nomeDoTitular;
     private float $saldo;
+    private static int $numeroDeContas = 0;
 
     public function __construct(string $cpf, string $nome)
     {
@@ -13,6 +14,8 @@ class Conta
         $this->cpfDoTitular = $cpf;
         $this->nomeDoTitular = $nome;
         $this->saldo = 0;
+
+        Conta::$numeroDeContas++;
     }
 
     public function saca(float $valorASacar): void
@@ -67,5 +70,10 @@ class Conta
             echo 'nome precisa de ter 5 caracters no mínimo.' . PHP_EOL;
             exit();
         }
+    }
+
+    public static function recuperaNumeroDeContas(): int
+    {
+        return Conta::$numeroDeContas;
     }
 }

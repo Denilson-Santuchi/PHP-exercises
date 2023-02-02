@@ -10,9 +10,13 @@ $primeiraConta->saca(300);
 echo $primeiraConta->recuperaSaldo() . PHP_EOL;
 echo $primeiraConta->recuperaCpfDoTitular() . PHP_EOL;
 
-$segundaConta = new Conta('987.654.321-00', 'Test');
+$segundaConta = new Conta('987.654.321-00', 'Test Test');
 $segundaConta->deposita(500);
 
 $primeiraConta->transfere(100, $segundaConta);
 echo var_dump($primeiraConta);
 echo var_dump($segundaConta);
+
+new Conta('135.158.961-18', 'test test');
+
+echo Conta::recuperaNumeroDeContas() . PHP_EOL;
