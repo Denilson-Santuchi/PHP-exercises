@@ -1,13 +1,9 @@
 <?php
 
-require_once 'src/Modelo/Conta/Conta.php';
-require_once 'src/Modelo/Endereco.php';
-require_once 'src/Modelo/Pessoa.php';
-require_once 'src/Modelo/Conta/Titular.php';
-require_once 'src/Modelo/Cpf.php';
+require_once 'src/Helpers/autoLoad.php';
 
-use Alura\Banco\Modelo\Conta\{Titular, Conta};
-use Alura\Banco\Modelo\{Endereco, Cpf};
+use Alura\Banco\Model\Conta\{Titular, Conta};
+use Alura\Banco\Model\{Endereco, Cpf};
 
 $endereço1 = new Endereco('test', 'test', 'test', 'test');
 $denilson = new Titular(new Cpf('123.456.789-10'), 'Denilson', $endereço1);
