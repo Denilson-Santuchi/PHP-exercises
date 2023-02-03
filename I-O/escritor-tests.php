@@ -1,8 +1,8 @@
 <?php
 
-$archive = fopen('listas-tests.txt', 'w');
+$archive = fopen('lista-tests.txt', 'a');
 
-$line = 'will add in arquive';
+$line = "\nwill add in arquive";
 
 fwrite($archive, $line);
 
