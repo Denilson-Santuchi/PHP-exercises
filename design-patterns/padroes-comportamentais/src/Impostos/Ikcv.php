@@ -4,7 +4,7 @@ namespace Alura\DesignPattern\Impostos;
 
 use Alura\DesignPattern\Orcamento;
 
-class Ikcv extends ImpostoDuasAliquotas implements IImposto
+class Ikcv extends ImpostoDuasAliquotas
 {
     public function condicional(Orcamento $orcamento): bool
     {
