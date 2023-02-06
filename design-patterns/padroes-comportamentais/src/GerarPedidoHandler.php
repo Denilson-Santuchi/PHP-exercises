@@ -2,11 +2,20 @@
 
 namespace Alura\DesignPattern;
 
+use Alura\DesignPattern\AcoesAoGerarPedido\{CriarPedidoNoBanco, EnviarPedidoPorEmail, IAcaoAoGerarPedido, LogGerarPedido};
+
 class GerarPedidoHandler implements ICommand
 {
+    /** @var IAcaoAoGerarPedido[] */
+    private array $acoesAposGerarPedido = [];
     public function __construct(/* repository, mail service ... */)
     {
         # code...
+    }
+
+    public function adicionarAcaoAoGerarPedido(IAcaoAoGerarPedido $acao): void
+    {
+        $this->acoesAposGerarPedido[] = $acao;
     }
 
     public function execute(GerarPedidoCommand $gerarPedido): void
@@ -20,6 +29,8 @@ class GerarPedidoHandler implements ICommand
         $pedido->nomeCliente = $gerarPedido->recuperaNome();
         $pedido->orcamento = $orcamento;
 
-        echo 'criou' . PHP_EOL;
+        foreach ($this->acoesAposGerarPedido as $acao) {
+            $acao->executaAcao($pedido);
+        }
     }
 }
