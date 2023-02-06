@@ -10,10 +10,8 @@ require 'vendor/autoload.php';
 $calculaImpostos = new CalculadoraDeImpostos();
 
 $orcamento = new Orcamento();
-$orcamento->valor = 100;
+$orcamento->valor = 600;
 $orcamento->quantidade = 5;
 
 $calculaDesconto = new CalculadoraDeDescontos;
 echo $calculaDesconto->calcula($orcamento);
-
-echo $calculaImpostos->calcula($orcamento, new Icms());
