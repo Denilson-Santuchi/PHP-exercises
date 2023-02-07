@@ -2,8 +2,14 @@
 
 require 'vendor/autoload.php';
 
-use Alura\Arquitetura\Aluno;
+use Alura\Arquitetura\FabricaAluno;
 
-$aluno = new Aluno();
-$aluno->adicionarTelefone('33', '99971-1551');
-echo $aluno->telefones[0] . PHP_EOL;
+$fabrica = new FabricaAluno();
+
+$fabrica->comCpfEmailENome(
+    '132.602.226-18',
+    'Denilson Santuchi',
+    'denilson.costa@braip.com'
+)->adionaTelefone('33', '99971-1551')->aluno();
+
+var_dump($fabrica);

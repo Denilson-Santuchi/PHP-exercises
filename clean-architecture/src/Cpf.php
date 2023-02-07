@@ -6,14 +6,14 @@ use Stringable;
 
 class Cpf implements Stringable
 {
-    private Cpf $cpf;
+    private string $cpf;
 
-    public function __construct(Cpf $cpf)
+    public function __construct(string $cpf)
     {
         $this->validaCpf($cpf);
     }
 
-    private function validaCpf(Cpf $cpf): void
+    private function validaCpf(string $cpf): void
     {
         if (filter_var($cpf, FILTER_VALIDATE_REGEXP, [
             'options' => [
