@@ -2,7 +2,7 @@
 
 require 'vendor/autoload.php';
 
-use Alura\Arquitetura\Aluno;
+use Alura\Arquitetura\Aluno\Aluno;
 
 $aluno = Aluno::comCpfNomeEEmail(
     '132.602.226-18',
