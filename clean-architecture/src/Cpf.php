@@ -13,7 +13,7 @@ class Cpf implements Stringable
         $this->validaCpf($cpf);
     }
 
-    public function validaCpf(Cpf $cpf): void
+    private function validaCpf(Cpf $cpf): void
     {
         if (filter_var($cpf, FILTER_VALIDATE_REGEXP, [
             'options' => [
@@ -21,7 +21,7 @@ class Cpf implements Stringable
             ]
         ]) === false) {
             throw new \InvalidArgumentException(
-                'CPF inválido'
+                'CPF no formato inválido'
             );
         }
         $this->cpf = $cpf;

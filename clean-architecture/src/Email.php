@@ -13,7 +13,7 @@ class Email implements Stringable
         $this->validaEmail($endereco);
     }
 
-    public function validaEmail(string $endereco): void
+    private function validaEmail(string $endereco): void
     {
         if (filter_var($endereco, FILTER_VALIDATE_EMAIL) === false) {
             throw new \InvalidArgumentException(
