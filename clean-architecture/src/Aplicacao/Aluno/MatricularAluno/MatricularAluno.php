@@ -10,11 +10,10 @@ class MatricularAluno
     private RepositorioDeAlunos $repositorioDeAlunos;
     private PublicadorDeEvento $publicador;
 
-    public function __construct(RepositorioDeAlunos $repositorioDeAlunos)
+    public function __construct(RepositorioDeAlunos $repositorioDeAlunos, PublicadorDeEvento $publicador)
     {
         $this->repositorioDeAlunos = $repositorioDeAlunos;
-        $this->publicador = new PublicadorDeEvento();
-        $this->publicador->adicionarOuvinte(new LogDeAlunoMatriculado());
+        $this->publicador = $publicador;
     }
 
     public function executa(MatricularAlunoDto $dados): void
