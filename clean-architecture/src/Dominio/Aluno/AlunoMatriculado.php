@@ -15,7 +15,7 @@ class AlunoMatriculado implements Evento
         $this->cpfAluno = $cpfAluno;
     }
 
-    public function methodName(): Cpf
+    public function cpfAluno(): Cpf
     {
         return $this->cpfAluno;
     }
