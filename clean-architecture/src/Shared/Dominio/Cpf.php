@@ -1,6 +1,6 @@
 <?php
 
-namespace Alura\Arquitetura\Academico\Dominio\Aluno;
+namespace Alura\Arquitetura\Shared\Dominio;
 
 use Stringable;
 

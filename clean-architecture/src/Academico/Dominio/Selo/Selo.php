@@ -1,6 +1,6 @@
 <?php
 
-namespace Alura\Arquitetura\Gameficacao\Dominio\Selo;
+namespace Alura\Arquitetura\Dominio\Selo;
 
 use Alura\Arquitetura\Shared\Dominio\Cpf;
 use Stringable;
