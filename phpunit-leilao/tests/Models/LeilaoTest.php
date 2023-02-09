@@ -58,7 +58,7 @@ class LeilaoTest extends TestCase
         }
     }
 
-    public function geraLances()
+    public static function geraLances()
     {
         $joao = new Usuario('João');
         $maria = new Usuario('Maria');

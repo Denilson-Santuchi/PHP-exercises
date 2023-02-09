@@ -1,6 +1,4 @@
 <phpunit
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/8.1/phpunit.xsd"
         colors="true">
     <testsuites>
         <testsuite name="unit">
@@ -9,6 +7,6 @@
     </testsuites>
 
     <logging>
-        <log type="testdox-text" target="testes-executados.txt"/>
+        <testdoxText outputFile="testdox.txt"/>
     </logging>
 </phpunit>
