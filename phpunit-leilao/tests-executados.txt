@@ -1,0 +1,11 @@
+Avaliador (Alura\Leilao\Tests\Service\Avaliador)
+ [x] Maior valor with data set "ordem-crescente"
+ [x] Maior valor with data set "ordem-decrescente"
+ [x] Maior valor with data set "ordem-aleatoria"
+ [x] Menor valor with data set "ordem-crescente"
+ [x] Menor valor with data set "ordem-decrescente"
+ [x] Menor valor with data set "ordem-aleatoria"
+ [x]  3 maiores lances with data set "ordem-crescente"
+ [x]  3 maiores lances with data set "ordem-decrescente"
+ [x]  3 maiores lances with data set "ordem-aleatoria"
+
