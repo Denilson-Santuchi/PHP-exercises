@@ -1,3 +1,7 @@
+Leilao (Alura\Leilao\Tests\Model\Leilao)
+ [x] Leilao deve receber lances with data set #0
+ [x] Leilao deve receber lances with data set #1
+
 Avaliador (Alura\Leilao\Tests\Service\Avaliador)
  [x] Maior valor with data set "ordem-crescente"
  [x] Maior valor with data set "ordem-decrescente"
