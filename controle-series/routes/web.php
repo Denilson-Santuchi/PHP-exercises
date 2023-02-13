@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::resource('/series', SeriesController::class)
-    ->except(['show', 'destroy']);
+    ->except(['show', 'delete']);
 
 Route::delete('/series/destroy/{serie}', [SeriesController::class, 'destroy'])
     ->name('delete');
