@@ -14,6 +14,6 @@ class SeriesController extends Controller
             'The last of us'
         ];
 
-        return view('listar-series')->with(compact('series'));
+        return view('series.index')->with(compact('series'));
     }
 }
