@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SeriesFormRequest;
-use App\Models\{Episode, Season, Series};
+use App\Models\Series;
 use App\Repositories\SeriesRepository;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class SeriesController extends Controller
 {
     public function __construct(private SeriesRepository $repository)
     {
     }
+
     public function index(Request $request)
     {
         $series = Series::all();
