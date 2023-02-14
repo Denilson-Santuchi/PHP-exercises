@@ -33,16 +33,16 @@ class SeriesController extends Controller
                 'series_id' => $serie->id,
                 'number' => $i,
             ];
-            Season::insert($seasons);
+        }
+        Season::insert($seasons);
 
-            $episodes = [];
-            foreach ($serie->seasons as $season) {
-                for ($j = 1; $j <= $request->episodesPerSeason; $j++) {
-                    $episodes[] = [
-                        'season_id' => $season->id,
-                        'number' => $j,
-                    ];
-                }
+        $episodes = [];
+        foreach ($serie->seasons as $season) {
+            for ($j = 1; $j <= $request->episodesPerSeason; $j++) {
+                $episodes[] = [
+                    'season_id' => $season->id,
+                    'number' => $j,
+                ];
             }
         }
         Episode::insert($episodes);
