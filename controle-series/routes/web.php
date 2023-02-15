@@ -1,6 +1,12 @@
 <?php
 
-use App\Http\Controllers\{EpisodesController, SeasonsController, SeriesController};
+use App\Http\Controllers\{
+    EpisodesController,
+    LoginController,
+    SeasonsController,
+    SeriesController,
+    UsersController,
+};
 use App\Http\Middleware\Autenticador;
 use Illuminate\Support\Facades\Route;
 
@@ -33,3 +39,15 @@ Route::get('/seasons/{season}/episodes', [EpisodesController::class, 'index'])
 
 Route::post('/seasons/{season}/episodes', [EpisodesController::class, 'update'])
     ->name('episodes.update');
+
+Route::get('/login', [LoginController::class, 'index'])
+    ->name('login');
+
+Route::post('/login', [LoginController::class, 'store'])
+    ->name('sign-in');
+
+Route::get('/register', [UsersController::class, 'create'])
+    ->name('users.create');
+
+Route::post('/register', [UsersController::class, 'store'])
+    ->name('users.store');
