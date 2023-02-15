@@ -23,9 +23,9 @@ class SeriesCreated extends Mailable
         public int $idSerie,
         public int $qtdTemporadas,
         public int $episodiosPorTemporada,
-    )
-    {
-        //
+    ) {
+        $this->subject("Série $nomeSerie criada");
+        // não está funcionando
     }
 
     /**

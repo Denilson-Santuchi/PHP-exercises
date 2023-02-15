@@ -1,12 +1,12 @@
 @component('mail::message')
-    # {{ $nomeSerie }} criada
+# {{ $nomeSerie }} criada com sucesso
 
-    A série {{ $nomeSerie }} com {{ $qtdTemporadas }} temporadas e {{ $episodiosPorTemporada }} episódios por temporada
+A série {{ $nomeSerie }} com {{ $qtdTemporadas }} temporadas e {{ $episodiosPorTemporada }} episódios por temporada foi criada
 
-    Acesse aqui:
+Acesse aqui:
 
-    @component('mail::button', ['url' => route('seasons.index', $idSerie)])
-        Ver série
-    @endcomponent
+@component('mail::button', ['url' => route('seasons.index', $idSerie)])
+    Ver série
+@endcomponent
 
 @endcomponent
