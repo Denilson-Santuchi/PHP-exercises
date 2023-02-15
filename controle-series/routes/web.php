@@ -8,6 +8,7 @@ use App\Http\Controllers\{
     UsersController,
 };
 use App\Http\Middleware\Autenticador;
+use App\Mail\SeriesCreated;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,3 +52,12 @@ Route::get('/register', [UsersController::class, 'create'])
     ->name('users.create');
 Route::post('/register', [UsersController::class, 'store'])
     ->name('users.store');
+
+Route::get('/email', function () {
+    return new SeriesCreated(
+        'Série de test',
+        1,
+        5,
+        10
+    );
+});
