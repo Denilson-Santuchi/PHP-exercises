@@ -30,4 +30,19 @@ class ApiSeriesController extends Controller
     {
         return $series;
     }
+
+    public function update(Series $series, SeriesFormRequest $request)
+    {
+        $series->fill($request->all());
+        $series->save();
+
+        return $series;
+    }
+
+    public function destroy(int $series)
+    {
+        Series::destroy($series);
+
+        return response()->noContent();
+    }
 }
