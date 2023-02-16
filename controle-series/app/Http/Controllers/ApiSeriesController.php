@@ -2,13 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SeriesFormRequest;
 use App\Models\Series;
-use Illuminate\Http\Request;
 
 class ApiSeriesController extends Controller
 {
-    public function getAll()
+    public function index()
     {
         return Series::all();
+    }
+
+    public function store(SeriesFormRequest $request)
+    {
+        return response()
+            ->json(
+                Series::create($request->all()),
+                201
+            );
     }
 }
